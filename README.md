@@ -1,4 +1,4 @@
-# ntgbtminer
+# Tempura ntgbtminer
 
 ntgbtminer is a no thrills
 [getblocktemplate](https://en.bitcoin.it/wiki/Getblocktemplate) Bitcoin miner.
