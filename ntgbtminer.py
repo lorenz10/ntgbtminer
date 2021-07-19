@@ -169,7 +169,7 @@ def tx_make_coinbase(coinbase_script, address, value, height):
 
     Arguments:
         coinbase_script (string): arbitrary script as an ASCII hex string
-        address (string): Base58 Bitcoin address
+        address (string): hex public key Peercoin address
         value (int): coinbase value
         height (int): mined block height
 
@@ -182,12 +182,14 @@ def tx_make_coinbase(coinbase_script, address, value, height):
     coinbase_script = tx_encode_coinbase_height(height) + coinbase_script
 
     # Create a pubkey script
-    # OP_DUP OP_HASH160 <len to push> <pubkey> OP_EQUALVERIFY OP_CHECKSIG
-    pubkey_script = "76" + "a9" + "14" + bitcoinaddress2hash160(address) + "88" + "ac"
+    # <pubkey> OP_CHECKSIG
+    pubkey_script = address + "ac"
 
     tx = ""
     # version
     tx += "01000000"
+    # peercoin tx timestamp
+    tx += int2lehex(int(time.time()), 4)
     # in-counter
     tx += "01"
     # input[0] prev hash
@@ -205,9 +207,15 @@ def tx_make_coinbase(coinbase_script, address, value, height):
     # output[0] value
     tx += int2lehex(value, 8)
     # output[0] script len
-    tx += int2varinthex(len(pubkey_script) // 2)
+    tx += "23"
     # output[0] script
-    tx += pubkey_script
+    tx += "21" + pubkey_script
+    # output[1] value
+    #tx += int2lehex(0, 8)
+    # output[1] script len
+    #tx += "4c" #length can change
+    # output[1] script
+    #tx += block_template['default_witness_commitment']
     # lock-time
     tx += "00000000"
 
@@ -468,7 +476,8 @@ def standalone_miner(coinbase_message, address):
             submission = block_make_submit(mined_block)
 
             print("Submitting:", submission, "\n")
-            response = rpc_submitblock(submission)
+            # adding empty block signature + block signature length to the submission
+            response = rpc_submitblock(submission+"00") 
             if response is not None:
                 print("Submission Error: {}".format(response))
                 break
@@ -476,7 +485,7 @@ def standalone_miner(coinbase_message, address):
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("Usage: {:s} <coinbase message> <block reward address>".format(sys.argv[0]))
+        print("Usage:\n$ python3 {:s} \"coinbase message\" \"block reward public key\" ".format(sys.argv[0]))
         sys.exit(1)
 
     standalone_miner(sys.argv[1].encode().hex(), sys.argv[2])
