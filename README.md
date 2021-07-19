@@ -37,7 +37,7 @@ Difficulty | 41fc071d | 4
 Nonce | 2d25990b | 4
 N. of transactions | 01 | needed
 Transactions | coinbase_transaction | needed
-Signature length | 23 | needed
+Signature size | 23 | needed
 Block signature | 304502205e76ed4e6d5e54771a750116968b79bc390d55af04 d0fd88a4cc7ce12129fa2b022100aa7cb078d805bfa8ac7563a5 bd7645808516be69972da0f375dbeaf968ba1a09 | needed
 
 
@@ -49,9 +49,34 @@ peercoin-cli getblock $(peercoin-cli getblockhash <BLOCK_HEIGHT>) <VERBOSITY>
 
 with verbosity set to 0 if you want the hexadecimal version of the block.
 
+### Coinbase transactions
+
+The following is a typical coinbase transaction (block 3 in Peercoin Testnet):
+
+Coinbase structure | Hex | Bytes
+------- | --------- | ------
+Version | 01000000 | 4
+Timestamp (Peercoin only) | f9c83a50 | 4
+
+N. of inputs | 01 | needed
+
+Unspent transaction ID (null) | 0000000000000000000000000000000000000000000000000000000000000000 | 32
+Input amount (max value) | ffffffff | 4
+Script sig size | 0e | needed
+Script sig (random data) | 04f9c83a500101062f503253482f | needed
+Sequence ?? | ffffffff | 4
+
+N. of outputs | 01 | needed
+Output amount | c022eff401000000 | 8
+Script pub key size | 23 | needed
+Script pub key (P2PK) | 21033745c638d520c6cd46c5fbdb319dfe6d8df5f83431d8b3997f7b097bfdfae2eeac | needed
+
+Locktime | 00000000 | 4
+
+
 ### References
 
-* [Bitcoin block header](https://learnmeabitcoin.com/technical/block-header)
-* [Bitcoin coinbase transaction](https://learnmeabitcoin.com/technical/coinbase-transaction)
+* [Bitcoin official reference docs](https://developer.bitcoin.org/reference/index.html)
+* [Bitcoin technical guide](https://learnmeabitcoin.com/technical/)
 
 
