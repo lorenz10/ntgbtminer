@@ -35,10 +35,10 @@ Merkle root | e04b48748c03f27c98d94f8e45f0e25e34e29dce8feaf4cdb15b5472f042e850 |
 Timestamp | 19cc3a50 | 4
 Difficulty | 41fc071d | 4
 Nonce | 2d25990b | 4
-N. of transactions | 01 | -
-Transactions | coinbase_transaction | -
-Signature length | 23 | -
-Block signature | 304502205e76ed4e6d5e54771a750116968b79bc390d55af04d0fd88a4cc7ce12129fa2b022100aa7cb078d805bfa8ac7563a5bd7645808516be69972da0f375dbeaf968ba1a09 | -
+N. of transactions | 01 | needed
+Transactions | coinbase_transaction | needed
+Signature length | 23 | needed
+Block signature | 304502205e76ed4e6d5e54771a750116968b79bc390d55af04 d0fd88a4cc7ce12129fa2b022100aa7cb078d805bfa8ac7563a5 bd7645808516be69972da0f375dbeaf968ba1a09 | needed
 
 
 A block can be obtained by running this command: 
@@ -51,7 +51,7 @@ with verbosity set to 0 if you want the hexadecimal version of the block.
 
 ### References
 
-* [How to create a Docker Image](https://www.linux.com/training-tutorials/how-create-docker-image/?utm_source=pocket_mylist)
-* [How to share Docker Images with others](https://www.cloudsavvyit.com/12326/how-to-share-docker-images-with-others/?utm_source=pocket_mylist)
+* [Bitcoin block header](https://learnmeabitcoin.com/technical/block-header)
+* [Bitcoin coinbase transaction](https://learnmeabitcoin.com/technical/coinbase-transaction)
 
 
