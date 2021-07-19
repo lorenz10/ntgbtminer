@@ -10,7 +10,7 @@ daemon.
 ### Changes
 
 * adding Peercoin transaction timestamp
-* using P2PK for coinbase transactions instead of P2PKH
+* using P2PK for coinbase transactions instead of P2PKH like in Peercoin coinbase blocks
 * adding empty block signature at the end of the block to avoid "Block decode failed" error from peercoind
 
 Forked from: [vsergeev/ntgbtminer](https://github.com/vsergeev/ntgbtminer.git)
