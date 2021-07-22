@@ -70,7 +70,7 @@ Coinbase structure | Hex | Bytes
 **Version** | 01000000 | 4
 **Timestamp** (Peercoin only) | f9c83a50 | 4
 **N. of inputs** | 01 | needed
-Unspent transaction ID (null) | 00000000000000000000000000000000 00000000000000000000000000000000 | 32
+Unspent transaction ID (null) | 0000000000000000000000000000000000000000000000000000000000000000 | 32
 Selected output (max value) | ffffffff | 4
 Script sig size | 0e | needed
 Script sig (random data) | 04f9c83a500101062f503253482f | needed
@@ -78,7 +78,7 @@ Sequence | ffffffff | 4
 **N. of outputs** | 01 | needed
 Output amount | c022eff401000000 | 8
 Script pub key size | 23 | needed
-Script pub key (P2PK) | 21033745c638d520c6cd46c5fbdb319dfe 6d8df5f83431d8b3997f7b097bfdfae2eeac | needed
+Script pub key (P2PK) | 21033745c638d520c6cd46c5fbdb319dfe6d8df5f83431d8b3997f7b097bfdfae2eeac | needed
 **Locktime** | 00000000 | 4
 
 
