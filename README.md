@@ -35,7 +35,7 @@ A simple alternative to start mining is the following commmand for bitcoin-cli, 
 peercoin-cli generatetoaddress <N_OF_BLOCKS> <ADDR_TO_GET_REWARD>
 ```
 
-### Block structure
+### Block with single coibase transaction
 
 The following is the structure of any Bitcoin/Peercoin block (block 3 in Peercoin Testnet):
 
@@ -61,9 +61,7 @@ peercoin-cli getblock $(peercoin-cli getblockhash <BLOCK_HEIGHT>) <VERBOSITY>
 
 with verbosity set to 0 if you want the hexadecimal version of the block.
 
-### Coinbase transactions
-
-The following is a typical coinbase transaction (block 3 in Peercoin Testnet):
+The following is the coinbase transaction contained in the block described above:
 
 Coinbase structure | Hex | Bytes
 ------- | --------- | ------
