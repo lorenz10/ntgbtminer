@@ -39,7 +39,7 @@ peercoin-cli generatetoaddress <N_OF_BLOCKS> <ADDR_TO_GET_REWARD> <MAX_TRIES>
 
 ### Mined block structure
 
-The following is the analysis of the hexadecimal version of any Bitcoin/Peercoin block (this particular one is block 3 of the Peercoin Testnet):
+The following is the analysis of the parameters of a generic Bitcoin/Peercoin block containing only a single coinbase transaction (this particular one is block 3 of the Peercoin Testnet):
 
 Parameter | Hex | Bytes
 ------- | --------- | ------
