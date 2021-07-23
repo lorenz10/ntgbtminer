@@ -1,6 +1,6 @@
 # Tempura mining
 
-### Option 1: ntgbtminer
+### Option 1: ntgbtminer :hammer:
 
 ntgbtminer is a no thrills
 [getblocktemplate](https://en.bitcoin.it/wiki/Getblocktemplate) Bitcoin miner.
@@ -12,7 +12,7 @@ daemon.
 The following changes has been made w.r.t. to the Bitcoin version of the miner:
 
 * adding Peercoin transaction timestamp
-* using P2PK for coinbase transactions instead of P2PKH like in Peercoin coinbase blocks
+* using P2PK for coinbase transactions instead of P2PKH like in the first Peercoin coinbase blocks
 * adding empty block signature at the end of the block to avoid "Block decode failed" error from peercoind
 
 Forked from: [vsergeev/ntgbtminer](https://github.com/vsergeev/ntgbtminer.git)
@@ -27,13 +27,15 @@ RPC_USER=any_username RPC_PASS=any_password RPC_URL="http://127.0.0.1:9904" \
 
 where the last parameter is the public key and not the address.
 
-### Option 2: generatetoaddress command
+### Option 2: generatetoaddress :hammer:
 
 A simple alternative to start mining is the following commmand for bitcoin-cli, that triggers a simple CPU miner and successfully mines blocks in regtest mode and testnet (not tried in mainnet):
 
 ```sh
 peercoin-cli generatetoaddress <N_OF_BLOCKS> <ADDR_TO_GET_REWARD> <MAX_TRIES>
 ```
+
+-----
 
 ### Mined block structure
 
@@ -81,8 +83,9 @@ Script pub key size | 23 | needed
 Script pub key (P2PK) | 21033745c638d520c6cd46c5fbdb319dfe6d8df5f83431d8b3997f7b097bfdfae2eeac | needed
 **Locktime** | 00000000 | 4
 
+-----
 
-### References
+### References :books:
 
 * [Bitcoin official docs](https://developer.bitcoin.org/reference/index.html)
 * [learnmeabitcoin.com - Bitcoin Technical Guide](https://learnmeabitcoin.com/technical/)
