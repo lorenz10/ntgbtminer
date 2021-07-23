@@ -1,6 +1,6 @@
 # Tempura mining
 
-### Option 1: ntgbtminer :hammer:
+### Miner 1: ntgbtminer :hammer:
 
 ntgbtminer is a no thrills
 [getblocktemplate](https://en.bitcoin.it/wiki/Getblocktemplate) Bitcoin miner.
@@ -27,7 +27,7 @@ RPC_USER=any_username RPC_PASS=any_password RPC_URL="http://127.0.0.1:9904" \
 
 where the last parameter is the public key and not the address.
 
-### Option 2: generatetoaddress :hammer:
+### Miner 2: generatetoaddress :hammer:
 
 A simple alternative to start mining is the following commmand for bitcoin-cli, that triggers a simple CPU miner and successfully mines blocks in regtest mode and testnet (not tried in mainnet):
 
