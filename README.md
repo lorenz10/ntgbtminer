@@ -35,7 +35,6 @@ A simple alternative to start mining is the following commmand for bitcoin-cli, 
 peercoin-cli generatetoaddress <N_OF_BLOCKS> <ADDR_TO_GET_REWARD> <MAX_TRIES>
 ```
 
------
 
 ### Mined block structure
 
@@ -83,7 +82,6 @@ Script pub key size | 23 | needed
 Script pub key (P2PK) | 21033745c638d520c6cd46c5fbdb319dfe6d8df5f83431d8b3997f7b097bfdfae2eeac | needed
 **Locktime** | 00000000 | 4
 
------
 
 ### References :books:
 
