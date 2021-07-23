@@ -1,5 +1,7 @@
 # Tempura mining
 
+I have found two alternatives to perform mining for Tempura.
+
 ### Miner 1: ntgbtminer :hammer:
 
 ntgbtminer is a no thrills
