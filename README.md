@@ -35,11 +35,11 @@ A simple alternative to start mining is the following commmand for bitcoin-cli, 
 peercoin-cli generatetoaddress <N_OF_BLOCKS> <ADDR_TO_GET_REWARD> <MAX_TRIES>
 ```
 
-### Block with single coibase transaction
+### Mined block structure
 
-The following is the structure of any Bitcoin/Peercoin block (block 3 in Peercoin Testnet):
+The following is the analysis of the hexadecimal version of any Bitcoin/Peercoin block (this particular one is block 3 of the Peercoin Testnet):
 
-Block structure | Hex | Bytes
+Parameter | Hex | Bytes
 ------- | --------- | ------
 Version | 01000000 | 4
 Previous block hash | 6c5fa7bf58277ca33ee5c459b7e2a7a30df7a71c0f54b2c96931861205000000 | 32
@@ -61,9 +61,11 @@ peercoin-cli getblock $(peercoin-cli getblockhash <BLOCK_HEIGHT>) <VERBOSITY>
 
 with verbosity set to 0 if you want the hexadecimal version of the block.
 
-The following is the coinbase transaction contained in the block described above:
+Here we have the **coinbase transaction** contained in the block described above. \
+A coinbase transaction is the one that gives a reward to the miner after computing a valid hash for the block. The input of the transaction is empty because coins are not taken from an older unspent transaction, but basically are generated out of thin air. \
+Usually after the coinbase tx are included all the other transactions that needs to be validated, however this was one of the first blocks of the chain and was only mined to generate the first coins.
 
-Coinbase structure | Hex | Bytes
+Parameter | Hex | Bytes
 ------- | --------- | ------
 **Version** | 01000000 | 4
 **Timestamp** (Peercoin only) | f9c83a50 | 4
