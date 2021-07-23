@@ -32,7 +32,7 @@ where the last parameter is the public key and not the address.
 A simple alternative to start mining is the following commmand for bitcoin-cli, that triggers a simple CPU miner and successfully mines blocks in regtest mode and testnet (not tried in mainnet):
 
 ```sh
-peercoin-cli generatetoaddress <N_OF_BLOCKS> <ADDR_TO_GET_REWARD>
+peercoin-cli generatetoaddress <N_OF_BLOCKS> <ADDR_TO_GET_REWARD> <MAX_TRIES>
 ```
 
 ### Block with single coibase transaction
