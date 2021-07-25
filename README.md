@@ -23,11 +23,10 @@ To initialize the miner, move into this repo and type the following command:
 
 ```sh
 RPC_USER=any_username RPC_PASS=any_password RPC_URL="http://127.0.0.1:9904" \
-    python3 ntgbtminer.py "Random useless message" \
-    "03ee5e86bad451416d8be66c4c08e980fc90d5003e4bc5026026e295f039fb9064"
+    python3 ntgbtminer.py "RANDOM_MESSAGE" "<PUB_KEY>"
 ```
 
-where the last parameter is the public key and not the address.
+It is possible to get the public key associated to an address with the `getaddressinfo` command.
 
 ### Miner 2: generatetoaddress :hammer:
 
