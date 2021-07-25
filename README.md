@@ -51,7 +51,7 @@ peercoin-cli getblock $(peercoin-cli getblockhash <BLOCK_HEIGHT>) <VERBOSITY>
 
 with verbosity set to 0 if you want the hexadecimal version of the block.
 
-### Coinbase tx
+### PoW coinbase tx
 
 Here we have the [coinbase transaction](https://learnmeabitcoin.com/technical/coinbase-transaction) that is contained in the block described above. \
 A coinbase is the tx that gives a reward to the miner after computing an hash for a new block. The input of the transaction is empty because coins are not taken from an older unspent transaction, but basically are generated out of thin air. \
