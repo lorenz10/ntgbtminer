@@ -181,7 +181,9 @@ def tx_make_coinbase(coinbase_script, address, value, height):
 
     coinbase_script = tx_encode_coinbase_height(height) + coinbase_script
 
-    # Create a pubkey script
+    # Tempura: Create a P2PK instead of P2PKH that seems not supported 
+    # from Peercion in coinbase txs
+    
     # <pubkey> OP_CHECKSIG
     pubkey_script = address + "ac"
 
@@ -210,12 +212,6 @@ def tx_make_coinbase(coinbase_script, address, value, height):
     tx += "23"
     # output[0] script
     tx += "21" + pubkey_script
-    # output[1] value
-    #tx += int2lehex(0, 8)
-    # output[1] script len
-    #tx += "4c" #length can change
-    # output[1] script
-    #tx += block_template['default_witness_commitment']
     # lock-time
     tx += "00000000"
 
@@ -476,7 +472,8 @@ def standalone_miner(coinbase_message, address):
             submission = block_make_submit(mined_block)
 
             print("Submitting:", submission, "\n")
-            # adding empty block signature + block signature length to the submission
+
+            # Tempura: adding empty block signature at the end "00"
             response = rpc_submitblock(submission+"00") 
             if response is not None:
                 print("Submission Error: {}".format(response))
