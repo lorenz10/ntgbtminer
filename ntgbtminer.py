@@ -163,6 +163,7 @@ def tx_encode_coinbase_height(height):
     return bytes([width]).hex() + int2lehex(height, width)
 
 
+# Tempura: make PPC tx instead of BTC
 def tx_make_coinbase(coinbase_script, address, value, height):
     """
     Create a coinbase transaction.
@@ -183,7 +184,6 @@ def tx_make_coinbase(coinbase_script, address, value, height):
 
     # Tempura: Create a P2PK instead of P2PKH that seems not supported 
     # from Peercion in coinbase txs
-    
     # <pubkey> OP_CHECKSIG
     pubkey_script = address + "ac"
 
