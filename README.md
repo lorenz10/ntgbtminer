@@ -89,3 +89,5 @@ peercoin-cli generatetoaddress <N_OF_BLOCKS> <ADDR_TO_GET_REWARD> <MAX_TRIES>
 ```
 
 For additional info check this thread [Bitcointalk - latest bitcoin still support mining?](https://bitcointalk.org/index.php?topic=5227792.0&utm_source=pocket_mylist).
+
+**Warning:** coinbase transactions mined with this command seems not to be supported from Peercoin for minting purposes.
