@@ -25,6 +25,7 @@ import sys
 RPC_URL = os.environ.get("RPC_URL", "http://127.0.0.1:8332")
 RPC_USER = os.environ.get("RPC_USER", "bitcoinrpc")
 RPC_PASS = os.environ.get("RPC_PASS", "")
+BLOCK_INTERVAL = os.environ.get("BLOCK_INTERVAL", "0")
 
 ################################################################################
 # Bitcoin Daemon JSON-HTTP RPC
@@ -461,6 +462,7 @@ def block_mine(block_template, coinbase_message, extranonce_start, address, time
 
 def standalone_miner(coinbase_message, address):
     while True:
+        start_time = int(time.time())
         block_template = rpc_getblocktemplate()
 
         print("Mining block template, height {:d}...".format(block_template['height']))
@@ -478,6 +480,16 @@ def standalone_miner(coinbase_message, address):
             if response is not None:
                 print("Submission Error: {}".format(response))
                 break
+
+            # Tempura: add an interval between mined blocks (needed when difficulty 
+            # is too low)
+            if int(BLOCK_INTERVAL) > 0:
+                diff_time = int(time.time()) - start_time
+                if int(BLOCK_INTERVAL) > diff_time:
+                    computed_interval = int(BLOCK_INTERVAL)-int(diff_time)
+                    print("Next block will be mined in ",computed_interval," seconds.\n")
+                    time.sleep(computed_interval)
+        
 
 
 if __name__ == "__main__":
